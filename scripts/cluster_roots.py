@@ -1,5 +1,6 @@
 import os
 import re
+from numpy import unique
 from sentence_transformers import SentenceTransformer
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
@@ -13,7 +14,7 @@ import pacmap
 # === CONFIGURATION ===
 def get_reducer(reducer: str) -> Union[PCA, umap.UMAP, pacmap.PaCMAP, pacmap.LocalMAP]:
     """
-    Returns PCA, UMAP, or PaCMAP reducer based on argument.
+    Returns PCA, UMAP, PaCMAP or LocalMAP reducer based on argument.
     """
     if reducer == "umap":
         return umap.UMAP()
@@ -38,6 +39,7 @@ def get_reducer(reducer: str) -> Union[PCA, umap.UMAP, pacmap.PaCMAP, pacmap.Loc
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--reducer", type=str, help="Reducer to use: 'pca', 'umap', or 'pacmap'.", default="pca")
+parser.add_argument("--debug", action="store_true", help="Set to True to only process the first 100 words.")
 args = parser.parse_args()
 directory = './data/voynitchese'  # path to your Voynich text files
 suffixes = ['aiin', 'dy', 'in', 'chy', 'chey', 'edy', 'ey', 'y']
@@ -62,12 +64,14 @@ stripped_words = [strip_suffix(word) for word in voynich_words]
 unique_stripped_words = sorted(set(stripped_words))
 
 # === EMBED WITH SBERT ===
+unique_stripped_words = unique_stripped_words[:100] if args.debug else unique_stripped_words
+print(unique_stripped_words)
 model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
 embeddings = model.encode(
     unique_stripped_words,
     normalize_embeddings=True,
     convert_to_numpy=True,
-    show_progress_bar=False
+    show_progress_bar=True
 )
 
 # === CLUSTER WITH KMEANS ===
