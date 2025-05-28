@@ -14,3 +14,6 @@ venv/
 
 # macOS files
 .DS_Store
+
+# model checkpoints
+data/models/

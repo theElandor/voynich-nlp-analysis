@@ -1,0 +1,84 @@
+{
+  "os":  "Linux-5.15.0-117-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.10.16",
+  "startedAt":  "2025-05-28T19:21:06.295592Z",
+  "program":  "/homes/mlugli/voynich-nlp-analysis/scripts/train_embeddings.ipynb",
+  "codePath":  "scripts/train_embeddings.ipynb",
+  "git":  {
+    "remote":  "https://github.com/theElandor/voynich-nlp-analysis.git",
+    "commit":  "78f1e14abebb236db0212e0fbd78d9451be6124a"
+  },
+  "email":  "283122@studenti.unimore.it",
+  "root":  "/homes/mlugli/voynich-nlp-analysis/scripts",
+  "host":  "ailb-login-03",
+  "executable":  "/homes/mlugli/.conda/envs/dinoenv/bin/python",
+  "codePathLocal":  "train_embeddings.ipynb",
+  "cpu_count":  28,
+  "cpu_count_logical":  56,
+  "gpu":  "Tesla P100-PCIE-16GB",
+  "gpu_count":  8,
+  "disk":  {
+    "/":  {
+      "total":  "257421955072",
+      "used":  "98198196224"
+    }
+  },
+  "memory":  {
+    "total":  "270175383552"
+  },
+  "cpu":  {
+    "count":  28,
+    "countLogical":  56
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla P100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3584,
+      "architecture":  "Pascal"
+    },
+    {
+      "name":  "Tesla P100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3584,
+      "architecture":  "Pascal"
+    },
+    {
+      "name":  "Tesla P100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3584,
+      "architecture":  "Pascal"
+    },
+    {
+      "name":  "Tesla P100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3584,
+      "architecture":  "Pascal"
+    },
+    {
+      "name":  "Tesla P100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3584,
+      "architecture":  "Pascal"
+    },
+    {
+      "name":  "Tesla P100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3584,
+      "architecture":  "Pascal"
+    },
+    {
+      "name":  "Tesla P100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3584,
+      "architecture":  "Pascal"
+    },
+    {
+      "name":  "Tesla P100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3584,
+      "architecture":  "Pascal"
+    }
+  ],
+  "cudaVersion":  "12.2"
+}
